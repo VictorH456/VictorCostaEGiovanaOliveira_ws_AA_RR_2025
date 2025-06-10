@@ -27,7 +27,7 @@ def main():
     # Criar diretório de entradas
     os.makedirs('entradas', exist_ok=True)
     
-    tamanhos = [1000, 10000, 100000, 500000, 1000000, 5000000, 10000000]
+    tamanhos = [50000000, 100000000, 500000000, 1000000000]
     tipos = {
         'sorted': gerar_arquivo_sorted,
         'random': gerar_arquivo_random,

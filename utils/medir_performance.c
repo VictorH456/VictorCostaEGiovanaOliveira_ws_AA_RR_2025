@@ -3,7 +3,9 @@
 #include <string.h>
 #include <time.h>
 
+// Declaração dos algoritmos
 void merge3_sort(int *arr, int l, int r);
+void merge_sort(int *arr, int l, int r);
 
 // Função para ler vetor de um arquivo
 int *ler_arquivo(const char *nome_arquivo, int *tamanho)
@@ -39,7 +41,7 @@ int main(int argc, char *argv[])
     if (argc != 3)
     {
         printf("Uso: %s <algoritmo> <arquivo_entrada.txt>\n", argv[0]);
-        printf("Algoritmos: merge\n");
+        printf("Algoritmos: merge, merge3\n");
         return 1;
     }
 
@@ -57,9 +59,13 @@ int main(int argc, char *argv[])
 
     clock_t inicio = clock();
 
-    if (strcmp(algoritmo, "merge") == 0)
+    if (strcmp(algoritmo, "merge3") == 0)
     {
         merge3_sort(arr, 0, n - 1);
+    }
+    else if (strcmp(algoritmo, "merge") == 0)
+    {
+        merge_sort(arr, 0, n - 1);
     }
     else
     {
