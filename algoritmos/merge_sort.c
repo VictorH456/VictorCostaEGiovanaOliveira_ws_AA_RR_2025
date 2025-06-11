@@ -57,12 +57,12 @@ void merge3_sort(int A[], int p, int r)
 {
     if (p < r)
     {
-        int d = (r - p) / 3;
+        int d = (r + p) / 3;
         merge3_sort(A, p, p + d);
         merge3_sort(A, p + d + 1, r-d);
         merge3_sort(A, r-d + 1, r);
 
-        merge3(A, p, r-d, r);
+        merge3(A, p, d, r);
     }
 }
 
